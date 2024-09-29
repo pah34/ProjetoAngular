@@ -1,22 +1,29 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Calculadora de Gorjeta</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <h3>Projeto com Bootstrap e Ionic!</h3>
-    <hr>
-    <p>Componentes Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"> - UI Components</a></p>
-    <p>Componentes Bootstrap <a target="_blank" rel="noopener noreferrer" href="https://getbootstrap.com/docs/5.3/components/buttons/"> - UI Components</a></p>
-  </div>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Valor da Conta</ion-label>
+      <ion-input type="number" [(ngModel)]="valorConta"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Porcentagem da Gorjeta (%)</ion-label>
+      <ion-input type="number" [(ngModel)]="porcentagemGorjeta"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="calcularGorjeta()">Calcular Gorjeta</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label>Gorjeta Sugerida:</ion-label>
+      <ion-input [value]="valorGorjeta | currency" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Total:</ion-label>
+      <ion-input [value]="totalConta | currency" readonly></ion-input>
+    </ion-item>
+  </ion-list>
 </ion-content>
