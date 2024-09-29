@@ -15,8 +15,6 @@ export class HomePage {
   media: number | null = null;
   situacao: string = '';
 
-  constructor() {}
-
   calcularMedia() {
     if (this.notaA !== null && this.notaB !== null) {
       // Calcula a média das notas
