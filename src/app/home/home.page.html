@@ -1,22 +1,29 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Calculadora de Juros Simples</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <h3>Projeto com Bootstrap e Ionic!</h3>
-    <hr>
-    <p>Componentes Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"> - UI Components</a></p>
-    <p>Componentes Bootstrap <a target="_blank" rel="noopener noreferrer" href="https://getbootstrap.com/docs/5.3/components/buttons/"> - UI Components</a></p>
-  </div>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Capital (R$)</ion-label>
+      <ion-input type="number" [(ngModel)]="capital"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Taxa de Juros (%)</ion-label>
+      <ion-input type="number" [(ngModel)]="taxaJuros"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Tempo (anos)</ion-label>
+      <ion-input type="number" [(ngModel)]="tempo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="calcularMontante()">Calcular Montante</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label>Montante Final:</ion-label>
+      <ion-input [value]="montante | number:'1.2-2'" readonly></ion-input>
+    </ion-item>
+  </ion-list>
 </ion-content>
