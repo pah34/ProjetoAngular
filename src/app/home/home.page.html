@@ -1,22 +1,27 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Cálculo de IMC</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <h3>Projeto com Bootstrap e Ionic!</h3>
-    <hr>
-    <p>Componentes Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"> - UI Components</a></p>
-    <p>Componentes Bootstrap <a target="_blank" rel="noopener noreferrer" href="https://getbootstrap.com/docs/5.3/components/buttons/"> - UI Components</a></p>
-  </div>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-input type="number" [(ngModel)]="peso" label="Peso (kg)"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" [(ngModel)]="altura" label="Altura (m)"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-button type="submit" (click)="calcularIMC()">Calcular IMC</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Resultado</ion-label>
+      <ion-input [value]="result" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Classificação</ion-label>
+      <ion-input [value]="classificacao" readonly></ion-input>
+    </ion-item>
+  </ion-list>
 </ion-content>
